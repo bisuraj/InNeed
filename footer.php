@@ -40,9 +40,9 @@
                                 <h4>Contact Info</h4>
                                 <ul>
                                     <li>
-                                        <p>Address :VIT VELLORE.</p>
+                                        <p>Address :VIT, Vellore Campus, Tiruvalam Rd, Katpadi, Vellore, Tamil Nadu 632014.</p>
                                     </li>
-                                    <li><a href="#">Phone : Null</a></li>
+                                    <li><a href="#">Phone : 987654312</a></li>
                                     <li><a href="#">Email : inneedsupport@email.com</a></li>
                                 </ul>
                             </div>
@@ -54,13 +54,16 @@
                             <div class="footer-tittle">
                                 <h4>Important Link</h4>
 								<ul>
-				<li><a href="contact.us.php">Contact Us</a></li>
-				<li><a href="career.us.php">Careers</a></li>
-				<li><a href="seeker.joinus.php">Post a CV</a></li>
-				<li><a href="search.jobs.php">Search Job</a></li>
-				<li><a href="search.job.fairs.php">Job Fair</a></li>
+				
+				
+				
+
 				<li><a href="seeker.login.php">Seeker Login</a></li>
-				<li><a href="employer.login.php">Employer Login</a></li>
+				<li><a href="employer_login.php">Employer Login</a></li>
+                
+                <li><a href="search.jobs.php">Search Job</a></li>
+                <li><a href="all_jobs.php">All Jobs</a></li>
+                <li><a href="contact.php">Contact Us</a></li>
 			</ul>
                             </div>
                         </div>

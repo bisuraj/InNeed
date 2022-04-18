@@ -9,9 +9,17 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title>Inneed</title>
 </head>
-
 <?php
-include 'navbar.php';
+	if(!empty($_SESSION['EMP_ID']))
+	{ 
+		include 'navbar.emp.loggedin.php';
+	 }
+	 elseif(!empty($_SESSION['SEEK_ID'])){
+		include 'navbar.loggedin.php'; 
+	 }
+	else {	include 'navbar.php';  }
+?>
+<?php
 include 'about_content.php';
 include 'footer.php';
 ?>

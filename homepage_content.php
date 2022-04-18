@@ -4,12 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>In Need </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
-
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -23,6 +19,13 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script type="text/javascript" src="js/SearchValidate.js" ></script>
+<style>
+    .btn5{
+        width:160px;
+        height:70px;
+    }
+    </style>
 </head>
 <main>
         <div class="slider-area ">
@@ -40,21 +43,21 @@
                         <div class="row">
                             <div class="col-xl-8">
                                 <!-- form -->
-                                <form action="#" class="search-box">
+                                <form action="search.quick.php" method="post" class="search-box" name="form_quicksearch" onsubmit="return QuickSearchValidate()">
                                     <div class="input-form">
-                                        <input type="text" placeholder="Job Tittle or keyword">
+                                        <input type="text" name ="quick_key" placeholder="Job Tittle or keyword">
                                     </div>
                                     <div class="select-form">
                                         <div class="select-itms">
-                                            <select name="select" id="location" placeholder="Location">
-                                                <option value="">Banglore</option>
-                                                <option value="">Hyderabad</option>
-                                                <option value="">Delhi</option>
+                                            <select name="quick_location" id="location" placeholder="Location">
+                                                <option value="Banglore">Banglore</option>
+                                                <option value="Hyderabad">Hyderabad</option>
+                                                <option value="Delhi">Delhi</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="search-form">
-                                        <button type="submit" class="btn head-btn1">Find job</button>
+                                        <button type="submit" class="btn head-btn1 btn5">Find job</button>
                                     </div>
                                 </form>
                             </div>
@@ -81,8 +84,8 @@
                                 <span class="flaticon-tour"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Design & Creative</a></h5>
-                                <span>(653)</span>
+                                <h5><a href="all_jobs.php">Design & Creative</a></h5>
+                                <span></span>
                             </div>
                         </div>
                     </div>
@@ -92,8 +95,8 @@
                                 <span class="flaticon-cms"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Design & Development</a></h5>
-                                <span>(658)</span>
+                                <h5><a href="all_jobs.php">Design & Development</a></h5>
+                                <span></span>
                             </div>
                         </div>
                     </div>
@@ -103,8 +106,8 @@
                                 <span class="flaticon-report"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Sales & Marketing</a></h5>
-                                <span>(658)</span>
+                                <h5><a href="all_jobs.php">Sales & Marketing</a></h5>
+                                <span></span>
                             </div>
                         </div>
                     </div>
@@ -114,8 +117,8 @@
                                 <span class="flaticon-app"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Mobile Application</a></h5>
-                                <span>(658)</span>
+                                <h5><a href="all_jobs.php">Mobile Application</a></h5>
+                                <span></span>
                             </div>
                         </div>
                     </div>
@@ -125,8 +128,8 @@
                                 <span class="flaticon-helmet"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Construction</a></h5>
-                                <span>(658)</span>
+                                <h5><a href="all_jobs.php">Construction</a></h5>
+                                <span></span>
                             </div>
                         </div>
                     </div>
@@ -136,8 +139,8 @@
                                 <span class="flaticon-high-tech"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Information Technology</a></h5>
-                                <span>(658)</span>
+                                <h5><a href="all_jobs.php">Information Technology</a></h5>
+                                <span></span>
                             </div>
                         </div>
                     </div>
@@ -147,8 +150,8 @@
                                 <span class="flaticon-real-estate"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Real Estate</a></h5>
-                                <span>(658)</span>
+                                <h5><a href="all_jobs.php">Real Estate</a></h5>
+                                <span></span>
                             </div>
                         </div>
                     </div>
@@ -158,8 +161,8 @@
                                 <span class="flaticon-content"></span>
                             </div>
                             <div class="services-cap">
-                                <h5><a href="job_listing.html">Content Writer</a></h5>
-                                <span>(658)</span>
+                                <h5><a href="all_jobs.php">Content Writer</a></h5>
+                                <span></span>
                             </div>
                         </div>
                     </div>
@@ -169,7 +172,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="browse-btn2 text-center mt-50">
-                            <a href="job_listing.html" class="border-btn2">Browse All Sectors</a>
+                            <a href="all_jobs.php" class="border-btn2">Browse All Sectors</a>
                         </div>
                     </div>
                 </div>

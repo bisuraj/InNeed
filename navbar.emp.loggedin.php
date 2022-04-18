@@ -1,9 +1,8 @@
 <?php 
-	if(!isset($_SESSION)) 
-    { 
-        session_start(); 
-    } 
-	$seekid = $_SESSION['SEEK_ID'];
+ if(!isset($_SESSION)) 
+ { 
+     session_start(); 
+ }	$empid = $_SESSION['EMP_ID'];
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -69,18 +68,15 @@
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
                                             <li><a href="index.php">Home</a></li>
-                                            <li><a href="findjobs.php">Find Jobs</a></li>
-                                            <li><a href="about.php">About Us</a></li>
-                                            <li><a href="contact.php">Contact Us</a></li>
+                                            <li><a href="emp_listjobs.php">List Jobs </a></li>
+                                            <li><a href="about.php">About</a></li>
+                                            <li><a href="contact.php">Contact</a></li>
                                         </ul>
                                     </nav>
                                 </div>
                                  <div class="dropdown">
                                        <button class="btn head-btn1">Profile</button>
                                        <div class="dropdown-content">
-                                     <?php  echo'<a href="seeker.dashboard.php" onClick="MyWindow=window.open('."'seeker.dashboard.php?id=".$seekid."', '_window');".'return false;"> DashBoard</a>';?>
-                              <?php echo	'<a href="seeker.editprofile.php" onClick="MyWindow=window.open	('."'seeker.editprofile.php?id=".$seekid."', '_window');".'return false;">Edit Profile</a>';
-			?>
                                       <a href="logout.php">logout</a>
                                 </div>
                                 </div>

@@ -1,8 +1,3 @@
-<?php
-	ob_start();
-	session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,14 +67,13 @@
 </head>
 <?php
 	if(!empty($_SESSION['EMP_ID']) || !empty($_SESSION['SEEK_ID']))
-	{ include 'navbar.loggedin.php'; }
+	{ include 'navbar.loggedin.php';  }
 	else {	include 'navbar.php';  }
 ?>
 <body>
 <div class="login-form">
-<form action="employer.login.php" method="post" name="form_emplogin" onsubmit="return EmpLogin()">
-				<br />
-                <h1 class="text-center">Employer</h2>
+    <form action="seeker.login.check.php" method="post" name="form_seekerlogin" onsubmit="return SeekerLogin()">
+    <h1 class="text-center">Job Seeker</h2>
         <h2 class="text-center">Sign in</h2>   
         <div class="form-group">
         	<div class="input-group">
@@ -88,7 +82,7 @@
                         <span class="fa fa-user"></span>
                     </span>                    
                 </div>
-                <input type="text" class="form-control" name="emp_email_login" placeholder="Email" required="required">				
+                <input type="text" class="form-control" name="seeker_email_login" placeholder="Email" required="required">				
             </div>
         </div>
 		<div class="form-group">
@@ -98,44 +92,43 @@
                         <i class="fa fa-lock"></i>
                     </span>                    
                 </div>
-                <input type="password" class="form-control" name="emp_pass_login" placeholder="Password" required="required">				
+                <input type="password" class="form-control" name="seeker_pass_login" placeholder="Password" required="required">				
             </div>
         </div>        
         <div class="form-group">
-            <button type="submit" class="btn btn-primary login-btn btn-block" name="emp_btn_login" value="Employer Login" >Sign in</button>
+            <button type="submit" class="btn btn-primary login-btn btn-block" name="seeker_btn_login" value="Seeker Login " >Sign in</button>
         </div>
         <div class="clearfix">
             <label class="float-left form-check-label"><input type="checkbox"> Remember me</label>
             <a href="#" class="float-right"><font color="#FF0000">Forgot Password?</font></a>
         </div>
     </form>
-    <p class="text-center text-muted small">Don't have an account? <a href="employer.joinus.php"><font color="#FF0000">Signup Here</font></a></p>
+    <p class="text-center text-muted small">Don't have an account? <a href="seeker.registration.php"><font color="#FF0000">Signup Here</font></a></p>
 </div>
 </body>
-
 <?php
 include 'footer.php';
 
-if($_SESSION['flag_emp_logincheck'] == 2)
+if($_SESSION['flag_seeker_logincheck'] == 2)
 {	
 	echo '<script> alert("Username and Password is inorrect."); </script>';
-	$_SESSION['flag_emp_logincheck'] = 0;
-	unset($_SESSION['flag_emp_logincheck']); 
+	$_SESSION['flag_seeker_logincheck'] = 0; 
+	unset($_SESSION['flag_seeker_logincheck']);
 }
 
-if($_SESSION['emp_loggedin'] == 1)
+if($_SESSION['seek_loggedin'] == 1)
 {
 	echo '<script> alert("You are already logged in"); </script>';
-	$_SESSION['emp_loggedin'] = 0;
-	unset($_SESSION['emp_loggedin']);
+	$_SESSION['seek_loggedin'] = 0;
+	unset($_SESSION['seek_loggedin']);
 }
 
-if($_SESSION['EMP_JOINED'] == 1)
+if($_SESSION['SEEK_JOINED'] == 1)
 {
 	echo '<script> alert("You are now joined with us. Login to access your account."); </script>';
-	$_SESSION['EMP_JOINED'] = 0;
-	unset($_SESSION['EMP_JOINED']);
+	$_SESSION['SEEK_JOINED'] = 0;
+	unset($_SESSION['SEEK_JOINED']);
 }
-?>
 
+?>
 </html>

@@ -1,20 +1,18 @@
 <?php
-session_start();
-$_SESSION['captcha'] = rand(1000, 9999);
+ob_start();
+if(!isset($_SESSION)) 
+{ 
+    session_start(); 
+}
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
-
 <head>
-	<meta charset="UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<link rel="stylesheet" href="css/master.css" type="text/css" />
-	<link rel="stylesheet" href="css/join.us.css" type="text/css" />
-	<script type="text/javascript" src="js/EmpRegistrationValidate.js" ></script>
-	<title>Employer Registration </title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+	<title>List Jobs</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -36,61 +34,23 @@ $_SESSION['captcha'] = rand(1000, 9999);
     margin: 0 0 15px;
 }
 	</style>
-</head>
+    </head>
 
-<!-- Start of title and navigation bar div -->
-<?php
-	if(!empty($_SESSION['EMP_ID']) || !empty($_SESSION['SEEK_ID']))
-	{ include 'navbar.loggedin.php';  }
-	else {	include 'navbar.php';  }
+<?php	
+	//Including database connection files to the page
+	require 'db_connect.php';
 ?>
 
-<div class="reg-form">
+<body>
+    <?php
+	include 'navbar.emp.loggedin.php';
+    ?>
+	
+    <div class="reg-form">
 
-<form method="post" action="employer.joinus.register.php" onclick="return EmpValidate()" name="form_empjoinus" >
-        <h1 class="text-center">Employer</h2>
-        <h2 class="text-center">Registrations</h2>   
-		<div class="form-group">
-        	<div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="fa fa-user"></span>
-                    </span>                    
-                </div>
-                <input id="textbox" class="form-control" type="text" name="emp_user_name" placeholder="Username" >			
-            </div>
-        </div>
-
-		<div class="form-group">
-        	<div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="fa fa-at"></span>
-                    </span>                    
-                </div>
-                <input id="textbox" class="form-control" type="text" name="emp_email" placeholder="Email-ID" >			
-            </div>
-        </div>
-		<div class="form-group">
-        	<div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="fa fa-lock"></span>
-                    </span>                    
-                </div>
-                <input id="textbox" class="form-control" type="password" name="emp_pass" placeholder="Password" >			
-            </div>
-        </div>
-		<div class="form-group">
-        	<div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="fa fa-lock"></span>
-                    </span>                    
-                </div>
-                <input id="textbox" class="form-control" type="text" name="emp_repass" placeholder="Confirm Password" >			
-            </div>
-        </div>
+<form method="post" action=""  name="" >
+        <h1 class="text-center">Job </h2>
+        <h2 class="text-center">Listing</h2>   
 		<div class="form-group">
         	<div class="input-group">
                 <div class="input-group-prepend">
@@ -98,7 +58,28 @@ $_SESSION['captcha'] = rand(1000, 9999);
                         <span class="fa fa-building"></span>
                     </span>                    
                 </div>
-                <input id="textbox" class="form-control" type="text" name="emp_cmpname" placeholder="Company Name" >			
+                <input id="textbox" class="form-control" type="text" name="companny_name" placeholder="Company Name" >			
+            </div>
+        </div>
+
+		<div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fa fa-key"></span>
+                    </span>                    
+                </div>
+                <input id="textbox" class="form-control" type="text" name="key_skill" placeholder="Key Skill" >			
+            </div>
+        </div>
+		<div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fa fa-globe"></span>
+                    </span>                    
+                </div>
+                <input id="textbox" class="form-control" type="location" name="emp_pass" placeholder="location" >			
             </div>
         </div>
 		<div class="form-group">
@@ -108,17 +89,39 @@ $_SESSION['captcha'] = rand(1000, 9999);
                         <span class="fa fa-lock"></span>
                     </span>                    
                 </div>
-				<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox" name="emp_cmptype" value="Company">
-  <label class="form-check-label" >Company</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="checkbox"  name="emp_cmptype" value="Consultant">
-  <label class="form-check-label" >Consultant</label>
-</div>
-			
+                <input id="textbox" class="form-control" type="text" name="ctc" placeholder="CTC" >			
+            </div>
         </div>
-
+		<div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span >Exp</span>
+                    </span>                    
+                </div>
+                <input id="textbox" class="form-control" type="text" name="exp_required" placeholder="Experience Required" >			
+            </div>
+        </div>
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span>Job</span>
+                    </span>                    
+                </div>
+                <input id="textarea" class="form-control" type="textarea" name="jd" placeholder="Job Description" >			
+            </div>
+        </div>
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span >Start Date</span>
+                    </span>                    
+                </div>
+                <input id="date" class="form-control" type="date" name="Date" placeholder="Joining Date" >			
+            </div>
+        </div>
 				<select class="form-select" aria-label="Select Industry Type " name="emp_industry_type">
 									<option value="0">Accounting / Finance</option>
 									<option value="1">Advertising / PR / MR / Event Management</option>
@@ -179,109 +182,51 @@ $_SESSION['captcha'] = rand(1000, 9999);
 									<option value="56">Water Treatment / Waste Management</option>
 									<option value="57">Wellness / Fitness / Sports</option>
 									<option value="58">Other</option>
-								</select>            
-           	<div class="form-check form-check-inline">
-               <input class="form-check-input" type="radio" name="emp_gender"  value="Male">
-  <label class="form-check-label" for="inlineRadio1">Male </label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="emp_gender"  value="Female">
-  <label class="form-check-label" for="inlineRadio2">Female</label>
-</div>
-
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">Address</label>
-    <textarea class="form-control" name="emp_add"  rows="5"></textarea>
-  </div>
-
-  <div class="form-group">
+								</select>               <br>
+     
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span >V</span>
+                    </span>                    
+                </div>
+                <input id="textbox" class="form-control" type="number" name="vaccancies" placeholder="Vaccancies" >			
+            </div>
+        </div>
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span >Expiry Date</span>
+                    </span>                    
+                </div>
+                <input id="textbox" class="form-control" type="Date" name="expiry_date" placeholder="Expiry Date" >			
+            </div>
+        </div>
+        <div class="form-group">
         	<div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
                         <span class="fa fa-globe"></span>
                     </span>                    
                 </div>
-                <input id="textbox" class="form-control" type="text" name="emp_city" placeholder="City  Name" >			
+                <input id="textbox" class="form-control" type="number" name="website" placeholder="website" >			
             </div>
         </div>
-		<div class="form-group">
-        	<div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="fa fa-building"></span>
-                    </span>                    
-                </div>
-                <input id="textbox" class="form-control" type="text" name="emp_state" placeholder="State" >			
-            </div>
-        </div>
-		<div class="form-group">
-        	<div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="fa fa-globe"></span>
-                    </span>                    
-                </div>
-                <input id="textbox" class="form-control" type="text" name="emp_country" placeholder="Country" >			
-            </div>
-        </div>
-		<div class="form-group">
-        	<div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="fa fa-flag"></span>
-                    </span>                    
-                </div>
-                <input id="textbox" class="form-control" type="text" name="emp_pincode" placeholder="Your Area Pincode" >			
-            </div>
-        </div>
-		<div class="form-group">
-        	<div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="fa fa-phone"></span>
-                    </span>                    
-                </div>
-                <input id="textbox" class="form-control" type="text" name="emp_phno" placeholder="Your Contact Number" >			
-            </div>
-        </div>
-					
-		<div class="form-group">
-        	<div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span class="fa fa-user"></span>
-                    </span>                    
-                </div>
-                <input id="textbox" class="form-control" type="text" name="emp_name" placeholder="Contact Person Name" >			
-            </div>
-        </div>
-					
-		<div class="form-group">
-        	<div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">
-                        <span ><input type="checkbox" name="emp_agree" onclick="LoadPage()"/> </span>
-                    </span>                    
-                </div>
-				   I agree on <a href="index.php" style="text-decoration:none; color:#0000FF">Terms &amp; Conditions</a>
-							<font color="#FF0000">&nbsp;*</font>	
-                  </div>
-          </div>
+
 					<div align="center">
-						<input type="submit" value="Register Me" id="button" name="emp_btn_register" class="btn head-btn1" onclick="EmpValidate()">
+						<input type="submit" value="Post" id="button" name="emp_btn_post" class="btn head-btn1" >
 					</div>
-				
-					<div>
-						<input type="hidden" value="<?php echo $query_run_num_username; ?>" name="emp_hddn_username" /> 
-					</div>
+
 				</form>
 				
 				</div>
 </div>
-</body>
-
+	<!-- End of Body Div -->
 <?php
 	include 'footer.php';
-?>	
+    ?>
+</body>
 
 </html>

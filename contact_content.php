@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
+
  <!-- Hero Area Start-->
  <div class="slider-area ">
             <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="assets/img/about.jpg">

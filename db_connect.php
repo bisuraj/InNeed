@@ -5,8 +5,11 @@
 	$mysql_pass = '';
 	$mysql_db = 'inneed';
 	
+
+
+    $conn= new mysqli($mysql_host,$mysql_user,$mysql_pass,$mysql_db);
 	//Code for sever connection and database connection.
-	if(!@mysql_connect($mysql_host, $mysql_user, $mysql_pass) || !@mysql_select_db($mysql_db))
+	if($conn->connect_error)
 	{
 		die($conn_error);
 		

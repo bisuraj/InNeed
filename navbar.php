@@ -41,7 +41,7 @@
                                     <nav class="d-none d-lg-block">
                                         <ul id="navigation">
                                             <li><a href="index.php">Home</a></li>
-                                            <li><a href="findjob.php">Find a Jobs </a></li>
+                                            <li><a href="findjobs.php">Find a Jobs </a></li>
                                             <li><a href="about.php">About</a></li>
                                             <li><a href="contact.php">Contact</a></li>
                                         </ul>
@@ -49,7 +49,7 @@
                                 </div>
                                 <!-- Header-btn -->
                                 <div class="header-btn d-none f-right d-lg-block">
-                                    <a href="jobseeker.login.php" class="btn head-btn1">Job Seeker</a>
+                                    <a href="seeker.login.php" class="btn head-btn1">Job Seeker</a>
                                     <a href="employer_login.php" class="btn head-btn2">Employer</a>
                                 </div>
                             </div>

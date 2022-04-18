@@ -55,7 +55,13 @@
                                 <h2>Find the Job You Deserve</h2>
                             </div>
                             <div class="support-caption">
-                                <p class="pera-top">We are here to Help Disabled People who dont have JOB </p>
+                                <p class="pera-top">InNeed is a platform which aims to provide jobs to the disabled.
+Globally Disabled people are looked upon as people who are incapable of working.
+We at InNeed provide an easy and smooth job seeking process, where the employer and jobseeker are easily connected.
+The job seeker can sign up with us by providing us information about his disability, academics, skills, and other details.
+Depending upon his/her skills and disability, a number of apt jobs will be listed.
+By choosing a job which he/she looks forward to join, he/she will be contacted within a few days by the management of a firm.
+We always look forward to helping the disabled section of our society and providing them with best of opportunities. </p>
                             </div>
                         </div>
                     </div>
