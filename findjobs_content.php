@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
+
 
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -22,16 +22,28 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<style>
-
+	.reg-form {
+    width: 700px;
+    margin: 30px auto;
+}
+.reg-form form {        
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.reg-form h2 {
+    margin: 0 0 15px;
+}
 		</style>
 </head>
 
 <body>
     <main>
 
-        <!-- Hero Area Start-->
         <div class="slider-area ">
             <div class="single-slider section-overly slider-height2 d-flex align-items-center" data-background="assets/img/about.jpg">
                 <div class="container">
@@ -45,15 +57,8 @@
                 </div>
             </div>
         </div>
-        <!-- Hero Area End -->
-        <!-- Job List Area Start -->
-        <div class="job-listing-area pt-120 pb-120">
-            <div class="container">
-                <div class="row">
-                    <!-- Left content -->
-                    <div class="col-xl-3 col-lg-3 col-md-4">
-                        <div class="row">
-                            <div class="col-12">
+ 
+        <div class="reg-form">
                                 <div class="small-section-tittle2 mb-45">
                                     <div class="ion"> <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20px" height="12px">
                                     <path fill-rule="evenodd"  fill="rgb(27, 207, 107)"
@@ -62,15 +67,14 @@
                                     </div>
                                     <h4>Search Jobs</h4>
                                 </div>
-                            </div>
-                        </div>
+                    
 						<form action="search.jobs.search.php" method="post">	
 						    <div class="single-listing">
                                 <div class="small-section-tittle2">
                                     <h4>Keywords</h4>
                                 </div>
 						        <div class="input-form" >
-								<input id="textbox" class="form-control" type="text" name="search_keyword" placeholder="Keywords">
+								<input id="search_key" class="form-control"  type="text" name="search_keyword" placeholder="Keywords">
 							    </div>
                              </div>
 							 <br>
@@ -248,58 +252,25 @@
 						<input id="button" class="btn head-btn1"  type="submit" name="search_btn" value="Search Job" >
 					</div>
                           </form>
-                        </div>
-                        <!-- Job Category Listing End -->
-                    </div>
-
-
-                    <!-- Right content -->
-                    <div class="col-xl-9 col-lg-9 col-md-8">
-                        <section class="featured-job-area">
-                            <div class="container" id="search-results" >
-      
-                            </div>
-                        </section>
-                    </div>
+                 </div>
+    
+                
     </main>
 
-<script>
-$( "#search-results" ).load( "search.jobs.search.php" );
-</script>
     <!-- JS here -->
 
-    <!-- All JS Custom Plugins Link Here here -->
-    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
-    <!-- Jquery, Popper, Bootstrap -->
-    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="./assets/js/popper.min.js"></script>
-    <script src="./assets/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
     <script src="./assets/js/jquery.slicknav.min.js"></script>
 
     <!-- Jquery Slick , Owl-Carousel Range -->
-    <script src="./assets/js/owl.carousel.min.js"></script>
     <script src="./assets/js/slick.min.js"></script>
-    <script src="./assets/js/price_rangs.js"></script>
-    <!-- One Page, Animated-HeadLin -->
-    <script src="./assets/js/wow.min.js"></script>
-    <script src="./assets/js/animated.headline.js"></script>
-    <script src="./assets/js/jquery.magnific-popup.js"></script>
+  
 
     <!-- Scrollup, nice-select, sticky -->
     <script src="./assets/js/jquery.scrollUp.min.js"></script>
     <script src="./assets/js/jquery.nice-select.min.js"></script>
-    <script src="./assets/js/jquery.sticky.js"></script>
 
-    <!-- contact js -->
-    <script src="./assets/js/contact.js"></script>
-    <script src="./assets/js/jquery.form.js"></script>
-    <script src="./assets/js/jquery.validate.min.js"></script>
-    <script src="./assets/js/mail-script.js"></script>
-    <script src="./assets/js/jquery.ajaxchimp.min.js"></script>
 
     <!-- Jquery Plugins, main Jquery -->
-    <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
 
 </body>

@@ -8,19 +8,45 @@
 
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<link rel="stylesheet" href="css/search.view.css" type="text/css" />
+	<title>Resume Review</title>
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<style>
+	.reg-form {
+    width: 700px;
+    margin: 30px auto;
+}
+.reg-form form {        
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.reg-form h2 {
+    margin: 0 0 15px;
+}</style>
 </head>
 
 <?php 
+
+if(!empty($_SESSION['EMP_ID']))
+{ 
+	include 'navbar.emp.loggedin.php';
+ }
+ elseif(!empty($_SESSION['SEEK_ID'])){
+	include 'navbar.loggedin.php'; 
+ }
+else {	include 'navbar.php';  }
 	$conn = mysqli_connect('localhost', 'root', '');
-	$db = mysqli_select_db('inneed', $conn);
-	if($conn == false){ echo mysql_errno($conn).":".mysql_error($conn)."\n"; }
-	if($db == false){ echo mysql_errno($conn).":".mysql_error($conn)."\n"; }
+	$db = mysqli_select_db($conn,'inneed');
+	if($conn == false){ echo mysqli_errno($conn).":".mysqli_error($conn)."\n"; }
+	if($db == false){ echo mysqli_errno($conn).":".mysqli_error($conn)."\n"; }
 ?>
 
 <body>
-	<div style="margin-left:45%">
-		<b><font color="#FFFFFF">Upload New Resume</font></b>
+	<div class=" text-center">
+		<b>Upload New Resume</b>
 	</div>
 	<div id="body_struct" style="margin-top: 1.5%">
 <?php
@@ -28,23 +54,31 @@
 	$query = "SELECT resume FROM seeker_details WHERE id='$id'";
 	$query_run = mysqli_query($conn,$query);
 	
-	$file = mysql_result($query_run, 0, 'resume');
+	while ($row=mysqli_fetch_assoc($query_run)){
+		$file= $row['resume'];
+	   }
 	$handle = fopen($file, 'r');
 	$read = file($file);
 	foreach($read as $fname)
 	{
 		echo $fname.'<br />';
 	}
-	fclose($handle);
+	#fclose($handle);
+	
 ?>
-	</div id="body_struct">
 
-	<div style="margin-left: 9.7%">
+	</div id="body_struct">
+    <div class="reg-form">
+	<div class="text-center">
 		<form action="resume.review.php" method="post" enctype="multipart/form-data">
-			<input type="file" name="new_resume" value="file" />
-			<input type="submit" name="upload_new_resume" value="Save" / style="margin-left: 65%; -webkit-border-radius: 8px; font-size: 15px;">
+			<input type="file" class="form-control" name="new_resume" value="file" /><br>
+			<input type="submit" class="btn head-btn1" name="upload_new_resume" value="Save" >
 		</form>
 	</div>
+</div>
+	<?php
+	include 'footer.php';
+	?>
 </body>
 
 <?php 
@@ -75,5 +109,6 @@
 			}
 		}
 	}
+	
 ?>
 </html>

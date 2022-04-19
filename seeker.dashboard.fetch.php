@@ -34,7 +34,7 @@
 						<td>'.$query_jobs_result['location'].'</td>
 						<td>'.$query_jobs_result['ctc'].'</td>
 						<td>
-						<a class= "btn btn-primary btn-sm"  href= "search.jobs.view.php" onClick="MyWindow=window.open('."'search.jobs.view.php?id="
+						<a class= "btn btn-primary btn-sm"  href= "search.jobs.view.php" onClick="MyWindow=window.open('."'jobapllied.view.php?id="
 						.$query_jobs_result['id']."', '_window');".'return false;"> Details </a> 
 						</td>
 					</tr>';

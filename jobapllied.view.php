@@ -10,8 +10,6 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title>Job Information</title>
-	<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
-
 	<style>
 	.reg-form {
     width: 700px;
@@ -86,10 +84,6 @@ else {	include 'navbar.php';  }
 			echo'	<div class="div_struct"><b>Organization Website : </b>'.$query_result['website'].'</div><br />';
 			echo'	<div class="div_struct"><b>Last Date to Apply : </b>'.$query_result['expire_date'].'</div><br />';
 			echo'	<div class="div_struct"><b>Job Post Date : </b>'.$query_result['post_date'].'</div><br />';	
-			
-			echo'	<form action="search.jobs.applied.php?job_id='.$id.'" method="post">';
-			echo'	<input type="submit"  class ="btn head-btn1" value="Apply for the Job"  />';
-			echo'	</form>';
     }
 ?>
 	
@@ -101,27 +95,5 @@ include 'footer.php';
     
 </body>
 
-<?php
-	if($_SESSION['view_loggedin'] == 1)
-	{
-		echo '<script> alert("You are not logged in. Login then apply for this job"); </script>';
-		$_SESSION['view_loggedin'] = 0;
-		unset($_SESSION['view_loggedin']);
-	}
-	
-	if($_SESSION['job_applied'] == 1)
-	{
-		echo '<script> alert("Already Applied"); </script>';
-		$_SESSION['job_applied'] == 0;
-		unset($_SESSION['job_applied']);
-	}
-	
-	else if($_SESSION['job_applied'] == 2)
-	{
-		echo '<script> alert("Applied Successfully"); </script>';
-		$_SESSION['job_applied'] == 0;
-		unset($_SESSION['job_applied']);
-	}
-?>
 
 </html>

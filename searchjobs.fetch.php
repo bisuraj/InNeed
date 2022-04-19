@@ -1,8 +1,5 @@
 <?php 
-	
-	//Including database connection files to the page.
 	require 'db_connect.php';
-	
 	if(isset($_POST['search_keyword']) || isset($_POST['search_location']) || isset($_POST['search_salary_ddl']) || 
 		isset($_POST['search_exp']) || isset($_POST['search_func_area_ddl']) || isset($_POST['search_industry_type_ddl']))
 	{
@@ -32,6 +29,7 @@
 			$query_rows_num = mysqli_num_rows($query_search);
 			if($query_rows_num > 0)
 			{		
+				
 				while($query_search_result = mysqli_fetch_array($query_search))
 				{	
 					echo '<tr>

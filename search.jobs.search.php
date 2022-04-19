@@ -9,7 +9,8 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<link rel="stylesheet" href="css/master.css" type="text/css" />
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
+
 </head>
 
 <?php

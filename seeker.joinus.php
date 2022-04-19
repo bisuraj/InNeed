@@ -39,7 +39,9 @@
 	
 	else
 	{
-		$db_id = mysql_result($query_run_id, 0, 'MAX(id)') + 1;
+		while ($row=mysqli_fetch_assoc($query_run_id)){
+			$db_id= $row['MAX(id)']+1;
+		   }
 	}
 
 	if($flag == 1)
@@ -116,7 +118,7 @@
 					$upload_cv = $folder.$db_id.'_'.$filename;				
 					$upload_cv_txt = $folder.$db_id.'_'.$namefile.'.txt';
 					
-					if($format == doc || $format == docx)
+					if($format == "doc" || $format == "docx" || $format="pdf")
 					{
 						move_uploaded_file($_FILES['seeker_resume']['tmp_name'], $folder.$new_filename);
 					}
@@ -138,6 +140,8 @@
 					
 					$query_run = mysqli_query($conn,$query);
 					$_SESSION['SEEK_JOINED'] = 1;
+					echo '<script> alert("Sucessfully Registered Please Login To Continue"); </script>';
+
 					//To relocate the webpage to other page without informing user.
 					echo '<script> window.location.href = "seeker.login.php"; </script>';
 				}

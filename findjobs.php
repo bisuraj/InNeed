@@ -7,7 +7,8 @@
 <head>
 	<meta charset="UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-	<title>Inneed</title>
+	<title>Inneed-Find Jobs</title>
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
 </head>
 
 <?php

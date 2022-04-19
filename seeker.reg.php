@@ -108,11 +108,11 @@
 </div>
 
 <div class="form-check form-check-inline">
-               <input class="form-check-input" type="radio" name="seeker_gender"  value="Single">
+               <input class="form-check-input" type="radio" name="seeker_marriage"  value="Single">
   <label class="form-check-label" for="inlineRadio1">Single </label>
 </div>
 <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="seeker_gender"  value="Married">
+  <input class="form-check-input" type="radio" name="seeker_marriahge"  value="Married">
   <label class="form-check-label" for="inlineRadio2">Married</label>
 </div>
 <div class="form-group">
@@ -359,7 +359,7 @@
 								<option value="3">Others</option>								
 							</select>
 <br>
-            < class="form-group">
+            <div class="form-group">
         	<div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">

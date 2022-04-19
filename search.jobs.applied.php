@@ -19,6 +19,7 @@
 			$fname = $query_run_result['fname'];
 			$lname = $query_run_result['lname'];
 			$folder = 'upload\\seeker_job_applied\\';
+            
 			$filename = $folder.$id.'_'.$fname." ".$lname.".txt";
 			$flag = 0;
 							
