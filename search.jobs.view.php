@@ -10,7 +10,6 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title>Drive Info</title>
-	<link rel="stylesheet" href="css/search.view.css" type="text/css" />
 </head>
 <?php
 
@@ -77,8 +76,8 @@ else {	include 'navbar.php';  }
 			echo'	<div class="div_struct"><b>Job Post Date : </b>'.$query_result['post_date'].'</div><br />';	
 			echo'	<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />';
 			
-			echo'	<form action="search.job.applied.php?job_id='.$id.'" method="post">';
-				echo'	<input type="submit" value="Apply for the Job" style="float: right; margin-right: 5%" />';
+			echo'	<form action="search.jobs.applied.php?job_id='.$id.'" method="post">';
+				echo'	<input type="submit"  class ="btn-primary btn-lg" value="Apply for the Job"  />';
 			echo'	</form>';
 		echo'	</div class="div_right">';		
 

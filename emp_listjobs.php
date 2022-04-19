@@ -48,19 +48,31 @@ if(!isset($_SESSION))
 	
     <div class="reg-form">
 
-<form method="post" action=""  name="" >
+<form method="post" action="emp.listjobs.php"  name="" >
         <h1 class="text-center">Job </h2>
         <h2 class="text-center">Listing</h2>   
-		<div class="form-group">
+        <div class="form-group">
         	<div class="input-group">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
                         <span class="fa fa-building"></span>
                     </span>                    
                 </div>
-                <input id="textbox" class="form-control" type="text" name="companny_name" placeholder="Company Name" >			
+                <input id="textbox" class="form-control" type="text" name="company_name" placeholder="Company Name" >			
             </div>
         </div>
+
+        <div class="form-group">
+        	<div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">
+                        <span class="fa fa-building"></span>
+                    </span>                    
+                </div>
+                <input id="textbox" class="form-control" type="text" name="job_name" placeholder="Job profile" >			
+            </div>
+        </div>
+
 
 		<div class="form-group">
         	<div class="input-group">
@@ -79,7 +91,7 @@ if(!isset($_SESSION))
                         <span class="fa fa-globe"></span>
                     </span>                    
                 </div>
-                <input id="textbox" class="form-control" type="location" name="emp_pass" placeholder="location" >			
+                <input id="textbox" class="form-control" type="location" name="location" placeholder="location" >			
             </div>
         </div>
 		<div class="form-group">

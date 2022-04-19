@@ -30,7 +30,7 @@
 </head>
 <body onload="SeekerPageLoad()">
 <div class="reg-form">
-<form action="seeker.joinus.register.php" method="post" name="form_registerseeker" onsubmit="return SeekerValidate()" enctype="multipart/form-data"> 
+<form action="seeker.joinus.php" method="post" name="form_registerseeker" onsubmit="return SeekerValidate()" enctype="multipart/form-data"> 
 <h1 class="text-center">Seeker</h2>
         <h2 class="text-center">Registrations</h2>   
 		<div class="form-group">

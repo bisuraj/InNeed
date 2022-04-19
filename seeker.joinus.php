@@ -4,11 +4,8 @@
     { 
         session_start(); 
     } 
-
 	//Including database connection files to the page.
 	require 'db_connect.php';
-	
-	//Checking whether data already exist or not
 	$flag = 0;
 	$email_check = strtolower($_POST['user_email']);
 	
