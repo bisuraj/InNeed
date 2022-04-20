@@ -1,6 +1,10 @@
 <?php
 	ob_start();
-	session_start();
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+	
 	
 	$conn = mysqli_connect('localhost', 'root', '');
 	$db = mysqli_select_db($conn, 'inneed');

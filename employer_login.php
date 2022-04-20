@@ -1,6 +1,10 @@
 <?php
 	ob_start();
-	session_start();
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+	
 ?>
 
 <!DOCTYPE html>
@@ -112,6 +116,7 @@
     </form>
     <p class="text-center text-muted small">Don't have an account? <a href="employer.joinus.php"><font color="#FF0000">Signup Here</font></a></p>
 </div>
+
 </body>
 
 <?php

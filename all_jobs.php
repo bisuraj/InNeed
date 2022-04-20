@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/nice-select.css">
     <link rel="stylesheet" href="assets/css/style.css">
+	<link rel="stylesheet" href="https://unpkg.com/handsfree@8.5.1/build/lib/assets/handsfree.css" />
+  <script src="https://unpkg.com/handsfree@8.5.1/build/lib/handsfree.js"></script>
+
 </head>
+
 <?php
 	if(!empty($_SESSION['EMP_ID']))
 	{ 
@@ -73,9 +77,15 @@
     
 ?>
     </tbody>
+	<script>
+  const handsfree = new Handsfree({weboji: true})
+     handsfree.enablePlugins('browser')
+    handsfree.start()
+  </script>
 					</table>
 					<?php 
 					    include 'footer.php';
 						?>
+						
 </body>
 </html>

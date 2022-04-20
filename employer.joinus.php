@@ -279,6 +279,7 @@ $_SESSION['captcha'] = rand(1000, 9999);
 				
 				</div>
 </div>
+
 </body>
 
 <?php

@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link rel="stylesheet" href="assets/css/flaticon.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://unpkg.com/handsfree@8.5.1/build/lib/handsfree.js"></script>
+
 </head>
 
 

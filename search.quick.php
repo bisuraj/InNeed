@@ -1,9 +1,10 @@
 <?php 
-	ob_start(); 
+	ob_start();
 	if(!isset($_SESSION)) 
     { 
         session_start(); 
-    } session_start();
+    } 
+	
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -14,6 +15,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<link rel="stylesheet" href="css/master.css" type="text/css" />
 	<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
+	<script src="https://unpkg.com/handsfree@8.5.1/build/lib/handsfree.js"></script>
 
 </head>
 
@@ -46,10 +48,10 @@
 	</tbody>
 </table>
 				
-    <?php
-?>
-</body>
-<?php
+  <?php
 include 'footer.php';
 ?>
+
+</body>
+
 </html>

@@ -171,6 +171,7 @@ else {	include 'navbar.php';  }
 ?>
 	
 	</div>
+	
 </body>
 
 </html>

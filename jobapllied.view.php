@@ -1,6 +1,10 @@
 <?php
 	ob_start();
-	session_start();
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+	
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -10,6 +14,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title>Job Information</title>
+    <script src="https://unpkg.com/handsfree@8.5.1/build/lib/handsfree.js"></script>
+
 	<style>
 	.reg-form {
     width: 700px;
@@ -92,7 +98,7 @@ else {	include 'navbar.php';  }
 include 'footer.php';
 
 ?>
-    
+
 </body>
 
 

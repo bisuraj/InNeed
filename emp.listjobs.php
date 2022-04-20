@@ -32,7 +32,8 @@
 			isset($_POST['vaccancies']) && isset($_POST['expiry_date']) && isset($_POST['website']))
 		{
 				//Initializing variables with the user inputs.
-				$company_name=
+				$post_date=date('Y-m-d');
+				$company_name=($_POST['company_name']);
                 $job_name = ($_POST['job_name']);
 				$key_skill =  ($_POST['key_skill']);
 				$location = $_POST['location'];
@@ -46,23 +47,23 @@
 				$website = strtolower($_POST['website']);
 				
 				//Checking whether value is empty or not in given textbox or not.
-				if(!empty($_POST['company_name']) && !empty($_POST['job_name']) && !empty($_POST['key_skill']) && !empty($_POST['location']) && !empty($_POST['ctc']) 
-					&& !empty($_POST['exp_required']) && !empty($_POST['jd']) && !empty($_POST['Date']) && $_POST['emp_industry_type'] != -1
-					&& !empty($_POST['vaccancies']) && !empty($_POST['expiry_date']) && !empty($_FILES['website']))
-				{
+			//	if(!empty($_POST['company_name']) && !empty($_POST['job_name']) && !empty($_POST['key_skill']) && !empty($_POST['location']) && !empty($_POST['ctc']) 
+			///		&& !empty($_POST['exp_required']) && !empty($_POST['jd']) 
+			//		&& !empty($_POST['vaccancies'])  && !empty($_POST['website']))
+				//{
 					//Query which is going to execute to for database manipulation.
-					$query = "INSERT INTO job_details VALUES ('','$company_name' '$job_name', '$key_skill', '$location', '$ctc', '$exp_required', '$jd', '$date',
-								'$emp_industry_type', '$vaccancies', '$expiry_date', '$website')";
+					$query = "INSERT INTO job_details VALUES ('','$company_name' ,'$job_name', '$key_skill', '$location', '$ctc', '$exp_required', '$jd','$date','$emp_industry_type','', 
+								'$vaccancies', '$post_date',  '$expiry_date', '$website')";
 					
 					$query_run = mysqli_query($conn,$query);
 					echo '<script> alert("Listed the Jobs"); </script>';
 					echo '<script> window.location.href = "emp_listjobs.php"; </script>';
-				}
-				else
-				{
-					echo '<script> alert("Fill all required fields first"); </script>';
-					echo '<script> window.location.href = "emp_listjobs.php"; </script>';
-				}
+			//	}
+			//	else
+			//	{
+			//		echo '<script> alert("Fill all required fields first"); </script>';
+			//		echo '<script> window.location.href = "emp_listjobs.php"; </script>';
+			//	}
 		}
 
         else 

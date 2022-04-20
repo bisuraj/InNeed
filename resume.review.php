@@ -1,6 +1,10 @@
 <?php 
 	ob_start();
-	session_start(); 
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+	
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -10,6 +14,7 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title>Resume Review</title>
 	<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
+	<script src="https://unpkg.com/handsfree@8.5.1/build/lib/handsfree.js"></script>
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<style>
@@ -79,6 +84,7 @@ else {	include 'navbar.php';  }
 	<?php
 	include 'footer.php';
 	?>
+	
 </body>
 
 <?php 
@@ -111,4 +117,5 @@ else {	include 'navbar.php';  }
 	}
 	
 ?>
+
 </html>

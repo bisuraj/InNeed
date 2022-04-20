@@ -1,6 +1,10 @@
 <?php
 	ob_start();
-	session_start();
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+	
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -11,7 +15,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 	<title>Job Information</title>
 	<link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
-
+	<script src="https://unpkg.com/handsfree@8.5.1/build/lib/handsfree.js"></script>
+	<script src="js/texttospeech.js" defer></script>
 	<style>
 	.reg-form {
     width: 700px;
@@ -38,10 +43,13 @@ else {	include 'navbar.php';  }
 	$db = mysqli_select_db($conn,'inneed');
 	if($conn == false){ echo mysqli_errno($conn).":".mysqli_error($conn)."\n"; }
 	if($db == false){ echo mysqli_errno($conn).":".mysqli_error($conn)."\n"; }
+
+
 ?>
 
 <body>
 	
+
 	<div class="reg-form">
 
 <?php 
@@ -51,7 +59,9 @@ else {	include 'navbar.php';  }
 	
 	while($query_result=mysqli_fetch_array($query_run))
 	{
-		echo '	<div><center><h2>'.$query_result['name'].' Walk-in Information </h2></center></div><br />';
+		echo '<article>	<div><center><h2>'.$query_result['name'].' Walk-in Information </h2></center></div><br />';
+
+		echo'<div align="center"> <button id="play" class="btn btn-success mt-5 me-3">Start</button></div>';
 		
 			echo'	<div class="div_struct"><b>Company Name : </b>'.$query_result['name'].'</div><br />';
 			echo'	<div class="div_struct"><b>Profile : </b>'.$query_result['profile'].'</div><br />';
@@ -85,7 +95,7 @@ else {	include 'navbar.php';  }
 			echo'    <div class="div_struct"><b>Job Description : </b>'.$query_result['jd'].'</div><br />';
 			echo'	<div class="div_struct"><b>Organization Website : </b>'.$query_result['website'].'</div><br />';
 			echo'	<div class="div_struct"><b>Last Date to Apply : </b>'.$query_result['expire_date'].'</div><br />';
-			echo'	<div class="div_struct"><b>Job Post Date : </b>'.$query_result['post_date'].'</div><br />';	
+			echo'	<div class="div_struct"><b>Job Post Date : </b>'.$query_result['post_date'].'</div><br /></article>';	
 			
 			echo'	<form action="search.jobs.applied.php?job_id='.$id.'" method="post">';
 			echo'	<input type="submit"  class ="btn head-btn1" value="Apply for the Job"  />';

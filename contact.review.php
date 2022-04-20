@@ -9,6 +9,8 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/logo.png">
+    <script src="https://unpkg.com/handsfree@8.5.1/build/lib/handsfree.js"></script>
+
 </head>
 
 <?php 
@@ -207,4 +209,6 @@
 						
 		}
 ?>
+
+</body>
 </html>
