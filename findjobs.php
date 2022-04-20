@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php 	ob_start();
+	if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    }  ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -16,7 +20,14 @@
 
 <?php
 
-include 'navbar.php';
+if(!empty($_SESSION['EMP_ID']))
+{ 
+  include 'navbar.emp.loggedin.php';
+ }
+ elseif(!empty($_SESSION['SEEK_ID'])){
+  include 'navbar.loggedin.php'; 
+ }
+else {	include 'navbar.php';  }
 include 'findjobs_content.php';
 include 'footer.php';
 
