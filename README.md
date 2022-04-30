@@ -17,5 +17,7 @@ is redirected to their dashboard where they can apply for different job openings
 per their likings. InNeed being a fast and responsive website it makes it easy for
 both the employer and job seeker to use.
 
+Demo :https://inneed-job-portal.000webhostapp.com/index.php
+
 ![image](https://user-images.githubusercontent.com/53631121/166121515-c716df6e-afa5-4619-aba5-33c42e4305b0.png)
 ![image](https://user-images.githubusercontent.com/53631121/166121520-e7b622f9-fcf4-4ae4-87fb-bc093bcb4382.png)
